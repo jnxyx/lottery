@@ -1,2 +1,8 @@
-# lottery
-lottery  ssq  tool
+[lottery](https://github.com/jnxyx/lottery) — tool of lottery
+==================================================
+
+
+说明
+----------------------------------
+
+彩票号码随机生成工具。
