@@ -2,7 +2,8 @@ html {
     font-family: 'Microsoft YaHei', 'Hiragino Sans GB', 'simsun';
 }
 
-#chose {
+#chose,
+#chosed {
     margin: 30px auto;
     width: 800px;
     height: auto;
@@ -33,7 +34,6 @@ span[class*='Span'] {
     float: left;
     cursor: pointer;
     margin: 3px;
-    
     moz-user-select: -moz-none;
     -moz-user-select: none;
     -o-user-select: none;
