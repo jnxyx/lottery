@@ -1,0 +1,62 @@
+html {
+    font-family: 'Microsoft YaHei', 'Hiragino Sans GB', 'simsun';
+}
+
+#chose {
+    margin: 30px auto;
+    width: 800px;
+    height: auto;
+    border: 1px solid #eee;
+    overflow: hidden;
+    padding: 30px;
+}
+
+#chose>div {
+    float: left;
+}
+
+#redContainer {
+    width: 500px;
+}
+
+#blueContainer {
+    width: 300px;
+}
+
+span[class*='Span'] {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid #eee;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    margin: 3px;
+    
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.redSpan {
+    color: red;
+}
+
+.redSpan.active {
+    color: white;
+    background-color: red;
+}
+
+.blueSpan {
+    color: blue;
+}
+
+.blueSpan.active {
+    color: white;
+    background-color: blue;
+}
