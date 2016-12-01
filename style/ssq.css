@@ -3,7 +3,8 @@ html {
 }
 
 #chose,
-#chosed {
+#chosed,
+#ctrlPano{
     margin: 30px auto;
     width: 800px;
     height: auto;
