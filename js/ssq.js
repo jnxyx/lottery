@@ -48,6 +48,8 @@ var ssq = {
     getChose: function() {
         var chose = $('.active').clone();
 
+        chose = $('<p></p>').append(chose);
+
         $('#chosed').append(chose);
     }
 };
