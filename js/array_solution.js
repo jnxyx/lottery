@@ -60,4 +60,5 @@
             return number == num ? true : false;
         }
     }
+    
 )()
