@@ -2,6 +2,10 @@ html {
     font-family: 'Microsoft YaHei', 'Hiragino Sans GB', 'simsun';
 }
 
+*{
+    overflow: auto;
+}
+
 #chose,
 #chosed,
 #ctrlPano {
