@@ -2,6 +2,7 @@ var ssq = {
 
     init: function() {
         ssq.initChose();
+        ssq.bindEvent();
     },
 
     // 初始化选球区
@@ -53,9 +54,17 @@ var ssq = {
         $('#chosed').append(chose);
     },
 
-    bindEvent:function(){
-        $('#getNum').click(function(){
+    clear: function() {
+        $('.redSpan,.blueSpan').removeClass('active');
+    },
+
+    bindEvent: function() {
+        $('#getNum').click(function() {
             ssq.getChose();
+            ssq.clear();
+        });
+        $('#clear').click(function() {
+            ssq.clear();
         });
     }
 };
