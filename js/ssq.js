@@ -51,6 +51,12 @@ var ssq = {
         chose = $('<p></p>').append(chose);
 
         $('#chosed').append(chose);
+    },
+
+    bindEvent:function(){
+        $('#getNum').click(function(){
+            ssq.getChose();
+        });
     }
 };
 
