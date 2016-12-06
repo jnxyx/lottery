@@ -1,5 +1,7 @@
 var ssq = {
 
+    choseArray: [],
+
     init: function() {
         ssq.initChose();
         ssq.bindEvent();
@@ -47,15 +49,27 @@ var ssq = {
     },
 
     getChose: function() {
-        var chose = $('.active').clone();
+        var chose = $('#chose').find('.active').clone();
 
         chose = $('<p></p>').append(chose);
+
+        var redNum = chose.find('.redSpan').length;
+        var blueNum = chose.find('.blueSpan').length;
+
+        if (redNum < 6 || blueNum == 0) {
+            return;
+        }
 
         $('#chosed').append(chose);
     },
 
     clear: function() {
-        $('.redSpan,.blueSpan').removeClass('active');
+        $('#chose').find('.redSpan,.blueSpan').removeClass('active');
+    },
+
+    clearChose: function() {
+        $('#chosed').html('');
+        ssq.choseArray = [];
     },
 
     bindEvent: function() {
@@ -65,6 +79,9 @@ var ssq = {
         });
         $('#clear').click(function() {
             ssq.clear();
+        });
+        $('#clearChose').click(function() {
+            ssq.clearChose();
         });
     }
 };
