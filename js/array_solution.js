@@ -28,7 +28,7 @@
 
         function valiArray(array, n, behindArray) {
             if (n == array.length) {
-                return check(array);
+                return check(behindArray.concat(array));
             } else {
                 for (var i = 0; i < array.length; i++) {
 
@@ -37,14 +37,7 @@
                         if (result) {
                             return true;
                         }
-                    } 
-                    // else if (n == array.length) {
-                    //     var result = check(array);
-                    //     if (result) {
-                    //         return true;
-                    //     }
-                    // } 
-                    else {
+                    } else {
                         var cArray = cloneArray(array);
                         var _behindArray = cloneArray(behindArray);
                         _behindArray.push(cArray.splice(i, 1)[0]);
