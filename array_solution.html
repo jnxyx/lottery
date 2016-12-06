@@ -6,14 +6,47 @@
     <title>array_solution</title>
     <script type="text/javascript" src="js/array_solution.js"></script>
     <script type="text/javascript">
-    window.solution({
-        array: [1, 2, 3, 4, 5],
-        number: 10
-    })
+    window.onload = function() {
+        $('#submit').onclick = function() {
+
+            try {
+                var array = JSON.parse($('#array').value);
+                var number = +$('#number').value;
+
+                if (isNaN(number)) {
+                    alert('请输入合法和值')
+                }
+
+                solution({
+                    array: array,
+                    number: number
+                });
+            } catch (e) {
+                alert('请输入合法数组');
+            }
+        }
+
+        function $(id) {
+            return document.querySelector(id);
+        }
+    }
     </script>
 </head>
 
 <body>
+    <div>
+        <p>请输入数组:</p>
+        <p>
+            <input id="array" type="text" name="" />
+        </p>
+        <p>请输入和值:</p>
+        <p>
+            <input id="number" type="text" name="" />
+        </p>
+        <p>
+            <input id="submit" type="button" name="" value="提交验证" />
+        </p>
+    </div>
 </body>
 
 </html>
