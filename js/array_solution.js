@@ -7,15 +7,15 @@
 
         for (var i = 1; i <= array.length; i++) {
             if (C(array, i)) {
-                // has = true;
-                // alert('存在');
-                // break;
+                has = true;
+                alert('存在');
+                break;
             }
         }
-        // if (!has) {
+        if (!has) {
 
-        //     alert('不存在');
-        // }
+            alert('不存在');
+        }
 
 
         function C(array, n) {
@@ -23,17 +23,22 @@
 
             var result = valiArray(array, n, []);
 
-            return result || true;
+            return result;
         }
 
         function valiArray(array, n, behindArray) {
+            var result;
             if (n == array.length) {
-                return check(behindArray.concat(array));
+                result = check(behindArray.concat(array));
+
+                if (result) {
+                    return true;
+                }
             } else {
                 for (var i = 0; i < array.length; i++) {
 
                     if (n == 1) {
-                        var result = check(behindArray.concat(array[i]));
+                        result = check(behindArray.concat(array[i]));
                         if (result) {
                             return true;
                         }
@@ -41,7 +46,10 @@
                         var cArray = cloneArray(array);
                         var _behindArray = cloneArray(behindArray);
                         _behindArray.push(cArray.splice(i, 1)[0]);
-                        valiArray(cArray, n - 1, _behindArray);
+                        result = valiArray(cArray, n - 1, _behindArray);
+                        if (result) {
+                            return true;
+                        }
                         array.splice(i, 1)[0];
                         i--;
                     }
@@ -59,11 +67,16 @@
         }
 
         function check(_array) {
-            console.log(_array);
-            return false;
+            // console.log(_array);
+            // return false;
             var num = 0;
             for (var i = _array.length - 1; i >= 0; i--) {
                 num += _array[i];
+            }
+
+            if (number == num) {
+
+                console.log(_array);
             }
 
             return number == num ? true : false;
