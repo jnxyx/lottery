@@ -83,6 +83,10 @@ var ssq = {
         $('#clearChose').click(function() {
             ssq.clearChose();
         });
+    },
+
+    getRandom:function(){
+        
     }
 };
 
