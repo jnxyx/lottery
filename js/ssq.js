@@ -72,6 +72,10 @@ var ssq = {
         ssq.choseArray = [];
     },
 
+    getRandom: function() {
+
+    },
+
     bindEvent: function() {
         $('#getNum').click(function() {
             ssq.getChose();
@@ -80,13 +84,12 @@ var ssq = {
         $('#clear').click(function() {
             ssq.clear();
         });
+        $('#getRandom').click(function() {
+            ssq.getRandom();
+        });
         $('#clearChose').click(function() {
             ssq.clearChose();
         });
-    },
-
-    getRandom:function(){
-        
     }
 };
 
