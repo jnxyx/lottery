@@ -85,7 +85,7 @@
         },
 
         getRandom : function(){
-        	
+        	// 逐一随机过滤
         },
 
         clearRestoreArray : function(){
