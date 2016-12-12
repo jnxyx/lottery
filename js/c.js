@@ -16,7 +16,14 @@
             auto:false
         }
 
-        this . options = this . extend( defaults , options )
+        this . options = this . extend( defaults , options );
+
+        this . length = this . options .length;
+
+        this . random = {
+            data : [],
+            type : 'empty' // filling finish
+        }
 
         this . init( this . options );
 
@@ -86,8 +93,25 @@
         	this.data = this.restoreArray;
         },
 
-        getRandom : function(){
+        getRandom : function( array , number ){
+            if( this.random.type == 'finish' ){
+                this.random.data = [];
+            }
         	
+            number = +number > array.length ? array.length : +number;
+            if( number == 0 ){
+                this.random.type == 'finish';
+
+                return this.random.data;
+            }
+
+            this.random.type == 'filling';
+
+            var random = parseInt( ( number - 1 ) * Math.random() );
+
+            this.random.data.push( array.splice( random , 1 ) );
+
+            this . getRandom( array , --number );
         },
 
         clearRestoreArray : function(){
@@ -133,12 +157,12 @@
 
             var self = this;
 
-            self . each( Array.prototype.slice.call(arguments, 1), function(extensionObject) {
+            self . each( Array.prototype.slice.call( arguments , 1 ), function( extensionObject ) {
 
-                self . each(extensionObject, function(value, key) {
+                self . each( extensionObject , function( value , key ) {
 
-                    if (extensionObject.hasOwnProperty(key)) {
-                        base[key] = value;
+                    if ( extensionObject.hasOwnProperty( key ) ) {
+                        base[ key ] = value;
                     }
                 });
             });
