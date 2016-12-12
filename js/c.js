@@ -16,7 +16,9 @@
             auto:false
         }
 
-        this . init( options || defaults );
+        this . options = this . extend( defaults , options )
+
+        this . init( this . options );
 
         return this;
     }
@@ -85,7 +87,7 @@
         },
 
         getRandom : function(){
-        	// 逐一随机过滤
+        	
         },
 
         clearRestoreArray : function(){
@@ -101,7 +103,48 @@
             }
 
             return returnArray;
-    	}
+    	},
+
+        each : function( loopable , callback , self ) {
+
+            //保存追加参数
+            var additionalArgs = Array.prototype.slice.call( arguments , 3 );
+
+            if (loopable) {
+                //数组类型
+                if (loopable.length === +loopable.length) {
+
+                    var i;
+                    for (i = 0; i < loopable.length; i++) {
+                        callback.apply( self , [loopable[i] , i].concat( additionalArgs ) );
+                    }
+                }
+                //对象类型
+                else {
+
+                    for (var item in loopable) {
+                        callback.apply( self , [loopable[item] , item].concat( additionalArgs ) );
+                    }
+                }
+            }
+        },
+
+        extend : function( base ) {
+
+            var self = this;
+
+            self . each( Array.prototype.slice.call(arguments, 1), function(extensionObject) {
+
+                self . each(extensionObject, function(value, key) {
+
+                    if (extensionObject.hasOwnProperty(key)) {
+                        base[key] = value;
+                    }
+                });
+            });
+
+            return base;
+        }
 
     }
 
