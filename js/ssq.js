@@ -108,13 +108,13 @@ var ssq = {
         var container = $('<p></p>');
 
         for (var i = redRandom.length - 1; i >= 0; i--) {
-            var redElement = $('<span class="redSpan"></span>');
+            var redElement = $('<span class="redSpan active"></span>');
             redElement.attr('code', redRandom[i]);
             redElement.text(redRandom[i]);
             container.append(redElement);
         }
 
-        var blueElement = $('<span class="blueSpan"></span>');
+        var blueElement = $('<span class="blueSpan active"></span>');
         blueElement.attr('code', blueRandom[0]);
         blueElement.text(blueRandom[0]);
         container.append(blueElement);
@@ -132,6 +132,11 @@ var ssq = {
         });
         $('#getRandom').click(function() {
             ssq.getRandom();
+        });
+        $('#getRandom100').click(function() {
+            for (var i = 100; i >= 1; i--) {  
+                ssq.getRandom();
+            }
         });
         $('#clearChose').click(function() {
             ssq.clearChose();

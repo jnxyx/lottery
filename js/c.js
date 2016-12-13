@@ -98,7 +98,7 @@
 
             this.random.type = 'filling';
 
-            var random = parseInt((array.length - 1) * Math.random());
+            var random = parseInt((array.length) * Math.random());
 
             this.random.data.push(array.splice(random, 1)[0]);
 
