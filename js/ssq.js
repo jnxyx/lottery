@@ -91,7 +91,7 @@ var ssq = {
     },
 
     getRandom: function() {
-
+        
     },
 
     bindEvent: function() {
