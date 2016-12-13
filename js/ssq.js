@@ -48,6 +48,24 @@ var ssq = {
         }
     },
 
+    getRedArray: function() {
+        var redArray = [];
+        for (var i = 1; i <= 33; i++) {
+            redArray.push(i);
+        }
+
+        return redArray;
+    },
+
+    getBlueArray: function() {
+        var blueArray = [];
+        for (var i = 1; i <= 16; i++) {
+            blueArray.push(i);
+        }
+
+        return blueArray;
+    },
+
     getChose: function() {
         var chose = $('#chose').find('.active').clone();
 
