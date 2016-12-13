@@ -33,10 +33,6 @@
     C.prototype = {
 
         init: function(options) {
-            if (!options.array && !options.array.length || !options.n) {
-                throw '缺少必要参数';
-                return;
-            }
 
             if (options.auto) {
                 this.loop(options.array, options.n, []);
@@ -44,11 +40,6 @@
         },
 
         renderData: function() {
-
-            if (!options.array && !options.array.length || !options.n) {
-                throw '缺少必要参数';
-                return;
-            }
 
             this.restoreArray = [];
 
@@ -100,16 +91,16 @@
 
             number = +number > array.length ? array.length : +number;
             if (number == 0) {
-                this.random.type == 'finish';
+                this.random.type = 'finish';
 
                 return this.random.data;
             }
 
-            this.random.type == 'filling';
+            this.random.type = 'filling';
 
-            var random = parseInt((number - 1) * Math.random());
+            var random = parseInt((array.length - 1) * Math.random());
 
-            this.random.data.push(array.splice(random, 1));
+            this.random.data.push(array.splice(random, 1)[0]);
 
             this.getRandom(array, --number);
         },

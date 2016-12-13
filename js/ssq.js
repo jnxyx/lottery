@@ -91,7 +91,35 @@ var ssq = {
     },
 
     getRandom: function() {
-        
+        var redRandom, blueRandom, comb = window.comb();
+
+        comb.getRandom(ssq.getRedArray(), 6);
+
+        redRandom = comb.random.data;
+
+        comb.getRandom(ssq.getBlueArray(), 1);
+
+        blueRandom = comb.random.data;
+
+        redRandom = redRandom.sort(function(a, b) {
+            return b - a;
+        });
+
+        var container = $('<p></p>');
+
+        for (var i = redRandom.length - 1; i >= 0; i--) {
+            var redElement = $('<span class="redSpan"></span>');
+            redElement.attr('code', redRandom[i]);
+            redElement.text(redRandom[i]);
+            container.append(redElement);
+        }
+
+        var blueElement = $('<span class="blueSpan"></span>');
+        blueElement.attr('code', blueRandom[0]);
+        blueElement.text(blueRandom[0]);
+        container.append(blueElement);
+
+        $('#chosed').append(container);
     },
 
     bindEvent: function() {
