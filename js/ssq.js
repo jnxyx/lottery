@@ -134,7 +134,16 @@ var ssq = {
             ssq.getRandom();
         });
         $('#getRandom100').click(function() {
-            for (var i = 100; i >= 1; i--) {  
+            for (var i = 100; i >= 1; i--) {
+                ssq.getRandom();
+            }
+        });
+        $('#getRandomBy').click(function() {
+            var random = +$('#ssq_setRandom').val();
+            if (isNaN(random) || random < 1) {
+                alert('请输入大于1的数字');
+            }
+            for (var i = random; i >= 1; i--) {
                 ssq.getRandom();
             }
         });

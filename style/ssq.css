@@ -2,7 +2,7 @@ html {
     font-family: 'Microsoft YaHei', 'Hiragino Sans GB', 'simsun';
 }
 
-*{
+* {
     overflow: auto;
 }
 
@@ -85,11 +85,30 @@ span[class*='Span'] {
     -ms-user-select: none;
     user-select: none;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #dedede;
     color: #ffffff;
 }
 
-.float{
+.float {
     float: left;
+}
+
+.input {
+    width: 120px;
+    height: 42px;
+    line-height: 40px;
+    text-align:bottom;
+    margin: 4px 20px 4px 0px;
+}
+
+.input>input {
+    width: 60px;
+    height: 30px;
+    line-height: 40px;
+    border-width: 0px 0px 1px 0px;
+    border-color: #8a8a8a;
+    border-style: solid;
+    outline: none;
 }
