@@ -74,7 +74,8 @@ var ssq = {
         var redNum = chose.find('.redSpan').length;
         var blueNum = chose.find('.blueSpan').length;
 
-        if (redNum < 6 || blueNum == 0) {
+        if (redNum != 6 || blueNum != 1) {
+            alert('请输入6个红球和1个蓝球！');
             return;
         }
 
@@ -122,6 +123,31 @@ var ssq = {
         $('#chosed').append(container);
     },
 
+    analyse: function() {
+        var obj = {
+                code: 1, //   号码
+                type: 'red', //  号码颜色
+                times: 1, //  号码出现初次
+                rate: 0.11, //  号码出现频率
+            },
+            countArray = [];
+
+        for (var i = 1; i <= 33; i++) {
+            var codeObj = ssq.cloneObj(obj);
+            codeObj.code = i;
+            codeObj.type ;
+        }
+    },
+
+    cloneObj: function(obj) {
+        var returnObj = {};
+        for (i in obj) {
+            returnObj[i] = obj[i];
+        }
+
+        return returnObj;
+    },
+
     bindEvent: function() {
         $('#getNum').click(function() {
             ssq.getChose();
@@ -149,6 +175,9 @@ var ssq = {
         });
         $('#clearChose').click(function() {
             ssq.clearChose();
+        });
+        $('#analyse').click(function() {
+            ssq.analyse();
         });
     }
 };
