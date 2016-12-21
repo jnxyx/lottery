@@ -9,6 +9,8 @@ var ssq = {
 
     // 初始化选球区
     initChose: function() {
+        
+        $('#chose').html('');
 
         // 添加红蓝选区容器
         $('#chose').append('<div id="redContainer"></div><div id="blueContainer"></div>')
