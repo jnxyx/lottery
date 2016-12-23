@@ -125,6 +125,7 @@ var ssq = {
         $('#chosed').append(container);
     },
 
+    // 号码分析
     analyse: function() {
         var obj = {
                 code: 1, //   号码
