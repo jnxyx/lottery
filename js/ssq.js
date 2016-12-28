@@ -81,6 +81,12 @@ var ssq = {
             return;
         }
 
+        var cancleElement = $('<span class="cancle">X</span>');
+        cancleElement.click(function() {
+            chose.remove();
+        });
+        chose.append(cancleElement);
+
         $('#chosed').append(chose);
     },
 
@@ -121,19 +127,18 @@ var ssq = {
         blueElement.attr('code', blueRandom[0]);
         blueElement.text(blueRandom[0]);
         container.append(blueElement);
+        var cancleElement = $('<span class="cancle">X</span>');
+        cancleElement.click(function() {
+            container.remove();
+        });
+        container.append(cancleElement);
 
         $('#chosed').append(container);
     },
 
     // 号码分析
     analyse: function() {
-        var obj = {
-                code: 1, //   号码
-                type: 'red', //  号码颜色
-                times: 1, //  号码出现初次
-                rate: 0.11, //  号码出现频率
-            },
-            countArray = [];
+        var countArray = [];
         var redAnalyseArray = ssq.getAnalyseArray('red'),
             blueAnalyseArray = ssq.getAnalyseArray('blue');
     },

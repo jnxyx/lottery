@@ -99,7 +99,7 @@ span[class*='Span'] {
     width: 120px;
     height: 42px;
     line-height: 40px;
-    text-align:bottom;
+    text-align: bottom;
     margin: 4px 20px 4px 0px;
 }
 
@@ -111,4 +111,25 @@ span[class*='Span'] {
     border-color: #8a8a8a;
     border-style: solid;
     outline: none;
+}
+
+.cancle {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid #eee;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    margin: 3px;
+    margin-left: 30px;
+    color: #a9a9a9;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
