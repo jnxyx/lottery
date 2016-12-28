@@ -9,7 +9,7 @@ var ssq = {
 
     // 初始化选球区
     initChose: function() {
-        
+
         $('#chose').html('');
 
         // 添加红蓝选区容器
@@ -134,16 +134,23 @@ var ssq = {
                 rate: 0.11, //  号码出现频率
             },
             countArray = [];
-        var redAnalyseArray =[],blueAnalyseArray=[];
-        for (var i = 1; i <= 33; i++) {
+        var redAnalyseArray = ssq.getAnalyseArray('red'),
+            blueAnalyseArray = ssq.getAnalyseArray('blue');
+    },
+
+    getAnalyseArray: function(type) {
+        var analyseArray = [];
+        var length = type == 'red' ? 33 : 16;
+        for (var i = 1; i <= length; i++) {
             var codeObj = {
                 code: i, //   号码
-                type: 'red', //  号码颜色
+                type: type, //  号码颜色
                 times: 0, //  号码出现初次
                 rate: 0, //  号码出现频率
             };
-            redAnalyseArray
+            analyseArray.push(codeObj);
         }
+        return analyseArray;
     },
 
     cloneObj: function(obj) {
