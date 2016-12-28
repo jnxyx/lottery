@@ -134,11 +134,15 @@ var ssq = {
                 rate: 0.11, //  号码出现频率
             },
             countArray = [];
-
+        var redAnalyseArray =[],blueAnalyseArray=[];
         for (var i = 1; i <= 33; i++) {
-            var codeObj = ssq.cloneObj(obj);
-            codeObj.code = i;
-            codeObj.type ;
+            var codeObj = {
+                code: i, //   号码
+                type: 'red', //  号码颜色
+                times: 0, //  号码出现初次
+                rate: 0, //  号码出现频率
+            };
+            redAnalyseArray
         }
     },
 
