@@ -43,7 +43,7 @@
 
             this.restoreArray = [];
 
-            this.loop(options.array, options.n, []);
+            this.loop(this.options.array, this.options.n, []);
         },
 
         loop: function(array, n, behindArray) {
