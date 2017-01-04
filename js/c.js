@@ -79,7 +79,11 @@
 
         restore: function(array) {
 
-            this.restoreArray = this.restoreArray ? this.restoreArray.push(array) : [array];
+            if ('[object Array]' == Object.prototype.toString.call(this.restoreArray)) {
+                this.restoreArray.push(array);
+            } else {
+                this.restoreArray = [array];
+            }
 
             this.data = this.restoreArray;
         },
