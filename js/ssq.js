@@ -140,7 +140,20 @@ var ssq = {
     analyse: function() {
         var countArray = [];
         var redAnalyseArray = ssq.getAnalyseArray('red'),
-            blueAnalyseArray = ssq.getAnalyseArray('blue');
+            blueAnalyseArray = ssq.getAnalyseArray('blue'),
+            choseArray = ssq.getCurrentChosed();
+    },
+
+    getCurrentChosed: function() {
+        $('#chose p').each(function() {
+            var code = [];
+            $(this).find('.active').each(function() {
+                code.push(+$(this).attr('code'));
+            });
+            ssq.choseArray.push(code);
+        });
+
+        return ssq.choseArray;
     },
 
     getAnalyseArray: function(type) {

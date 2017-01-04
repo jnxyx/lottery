@@ -11,9 +11,9 @@
         }
 
         var defaults = {
-            array: [],
-            n: 0,
-            auto: false
+            array: [], // 数组参数
+            n: 0, // 组合值
+            auto: false // 自动计算
         }
 
         this.options = this.extend(defaults, options);
