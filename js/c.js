@@ -50,7 +50,7 @@
 
             if (n == array.length) {
 
-                check(behindArray.concat(array));
+                this.restore(behindArray.concat(array));
 
             } else {
 
