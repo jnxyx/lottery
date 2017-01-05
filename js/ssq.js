@@ -145,7 +145,8 @@ var ssq = {
     },
 
     getCurrentChosed: function() {
-        $('#chose p').each(function() {
+        ssq.choseArray = [];
+        $('#chosed p').each(function() {
             var code = [];
             $(this).find('.active').each(function() {
                 code.push(+$(this).attr('code'));
