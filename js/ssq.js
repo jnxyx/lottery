@@ -141,7 +141,26 @@ var ssq = {
         var countArray = [];
         var redAnalyseArray = ssq.getAnalyseArray('red'),
             blueAnalyseArray = ssq.getAnalyseArray('blue'),
-            choseArray = ssq.renderCurrentChosed();
+            analyseArray = ssq.renderCurrentChosed();
+
+        // 分析数组采样
+        for (var i = 0; i < analyseArray.length; i++) {
+            var item = analyseArray[i];
+
+            for (var j = 0; i < item.length; j++) {
+                if (j != 6) {
+                    redAnalyseArray[+item[j] - 1].times++;
+                } else {
+                    blueAnalyseArray[+item[j] - 1].times++;
+                }
+            }
+        }
+
+        for (var i = 0; i < redAnalyseArray.length; i++) {
+            var item = redAnalyseArray[i];
+
+            item.rate = item.times; // to be continued
+        }
     },
 
     renderCurrentChosed: function() {
