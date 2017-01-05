@@ -141,10 +141,10 @@ var ssq = {
         var countArray = [];
         var redAnalyseArray = ssq.getAnalyseArray('red'),
             blueAnalyseArray = ssq.getAnalyseArray('blue'),
-            choseArray = ssq.getCurrentChosed();
+            choseArray = ssq.renderCurrentChosed();
     },
 
-    getCurrentChosed: function() {
+    renderCurrentChosed: function() {
         ssq.choseArray = [];
         $('#chosed p').each(function() {
             var code = [];
