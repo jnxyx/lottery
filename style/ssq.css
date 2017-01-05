@@ -136,5 +136,21 @@ span[class*='Span'] {
 
 #analyseContainer {
     position: relative;
-    margin-top: 10px;
+    margin: 30px auto;
+    width: 800px;
 }
+.tabrow{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.anatd {
+    height: 38px;
+    line-height: 38px;
+    font-size: 14px;
+    color: #8a8a8a;
+}
+.anatd span{
+    width: 150px;
+    margin-left: 30px;
+}
+
