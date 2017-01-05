@@ -147,7 +147,7 @@ var ssq = {
         for (var i = 0; i < analyseArray.length; i++) {
             var item = analyseArray[i];
 
-            for (var j = 0; i < item.length; j++) {
+            for (var j = 0; j < item.length; j++) {
                 if (j != 6) {
                     redAnalyseArray[+item[j] - 1].times++;
                 } else {
@@ -159,8 +159,27 @@ var ssq = {
         for (var i = 0; i < redAnalyseArray.length; i++) {
             var item = redAnalyseArray[i];
 
-            item.rate = item.times; // to be continued
+            item.rate = item.times / (6 * analyseArray.length);
         }
+
+        for (var i = 0; i < blueAnalyseArray.length; i++) {
+            var item = blueAnalyseArray[i];
+
+            item.rate = item.times / analyseArray.length;
+        }
+
+        ssq.analyseObj = {
+            red: redAnalyseArray,
+            blue: blueAnalyseArray
+        };
+
+        console.log(redAnalyseArray, blueAnalyseArray);
+
+        return {
+            red: redAnalyseArray,
+            blue: blueAnalyseArray
+        };
+
     },
 
     renderCurrentChosed: function() {
@@ -191,12 +210,15 @@ var ssq = {
         return analyseArray;
     },
 
+    renderAnalyse: function(analyseObj) {
+        analyseObj = analyseObj || ssq.analyseObj;
+    },
+
     cloneObj: function(obj) {
         var returnObj = {};
         for (i in obj) {
             returnObj[i] = obj[i];
         }
-
         return returnObj;
     },
 

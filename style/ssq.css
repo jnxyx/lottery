@@ -133,3 +133,8 @@ span[class*='Span'] {
     -ms-user-select: none;
     user-select: none;
 }
+
+#analyseContainer {
+    position: relative;
+    margin-top: 10px;
+}
