@@ -212,6 +212,7 @@ var ssq = {
 
     renderAnalyse: function(analyseObj) {
         analyseObj = analyseObj || ssq.analyseObj;
+        // 渲染展示概率
     },
 
     cloneObj: function(obj) {
