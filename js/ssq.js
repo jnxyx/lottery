@@ -219,7 +219,7 @@ var ssq = {
 
         var html = '';
 
-        for (var i = 0; i < analyseObj.red; i++) {
+        for (var i = 0; i < analyseObj.red.length; i++) {
             var redItem = analyseObj.red[i];
             html += '<div class="tabrow">';
             html += '<span class="redSpan active">' + redItem.code + '</span>';
@@ -230,10 +230,10 @@ var ssq = {
             html += '</div>';
         }
 
-        for (var i = 0; i < analyseObj.blue; i++) {
+        for (var i = 0; i < analyseObj.blue.length; i++) {
             var blueItem = analyseObj.blue[i];
             html += '<div class="tabrow">';
-            html += '<span class="redSpan active">' + blueItem.code + '</span>';
+            html += '<span class="blueSpan active">' + blueItem.code + '</span>';
             html += '<div class="anatd">';
             html += '    <span>出现次数：<b>' + blueItem.times + '</b></span>';
             html += '    <span>出现概率：<b>' + blueItem.rate + '</b></span>';
