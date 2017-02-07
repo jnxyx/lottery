@@ -160,12 +160,14 @@ var ssq = {
             var item = redAnalyseArray[i];
 
             item.rate = item.times / (6 * analyseArray.length);
+            item.rate = isNaN(item.rate) || 0;
         }
 
         for (var i = 0; i < blueAnalyseArray.length; i++) {
             var item = blueAnalyseArray[i];
 
             item.rate = item.times / analyseArray.length;
+            item.rate = isNaN(item.rate) || 0;
         }
 
         ssq.analyseObj = {
