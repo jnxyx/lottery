@@ -173,6 +173,9 @@ var ssq = {
             blue: blueAnalyseArray
         };
 
+        // 渲染概率数据
+        ssq.renderAnalyse();
+
         console.log(redAnalyseArray, blueAnalyseArray);
 
         return {
@@ -213,6 +216,32 @@ var ssq = {
     renderAnalyse: function(analyseObj) {
         analyseObj = analyseObj || ssq.analyseObj;
         // 页面渲染概率统计
+
+        var html = '';
+
+        for (var i = 0; i < analyseObj.red; i++) {
+            var redItem = analyseObj.red[i];
+            html += '<div class="tabrow">';
+            html += '<span class="redSpan active">' + redItem.code + '</span>';
+            html += '<div class="anatd">';
+            html += '    <span>出现次数：<b>' + redItem.times + '</b></span>';
+            html += '    <span>出现概率：<b>' + redItem.rate + '</b></span>';
+            html += '</div>';
+            html += '</div>';
+        }
+
+        for (var i = 0; i < analyseObj.blue; i++) {
+            var blueItem = analyseObj.blue[i];
+            html += '<div class="tabrow">';
+            html += '<span class="redSpan active">' + blueItem.code + '</span>';
+            html += '<div class="anatd">';
+            html += '    <span>出现次数：<b>' + blueItem.times + '</b></span>';
+            html += '    <span>出现概率：<b>' + blueItem.rate + '</b></span>';
+            html += '</div>';
+            html += '</div>';
+        }
+
+        $('#analyseContainer').html(html);
     },
 
     cloneObj: function(obj) {
