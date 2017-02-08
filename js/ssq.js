@@ -246,8 +246,8 @@ var ssq = {
         $('#analyseContainer').html(html);
     },
 
-    forecast: function() {
-
+    forecast: function(analyseObj) {
+        var analyseObj = analyseObj || ssq.analyseObj;
     },
 
     cloneObj: function(obj) {
