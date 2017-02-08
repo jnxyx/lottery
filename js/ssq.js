@@ -246,6 +246,10 @@ var ssq = {
         $('#analyseContainer').html(html);
     },
 
+    forecast: function() {
+
+    },
+
     cloneObj: function(obj) {
         var returnObj = {};
         for (i in obj) {
@@ -284,6 +288,9 @@ var ssq = {
         });
         $('#analyse').click(function() {
             ssq.analyse();
+        });
+        $('#forecast').click(function() {
+            ssq.forecast();
         });
     }
 };
